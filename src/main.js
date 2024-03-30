@@ -1,50 +1,5 @@
-// //use API key
-// ((g) => {
-//   var h,
-//     a,
-//     k,
-//     p = "The Google Maps JavaScript API",
-//     c = "google",
-//     l = "importLibrary",
-//     q = "__ib__",
-//     m = document,
-//     b = window;
-//   b = b[c] || (b[c] = {});
-//   var d = b.maps || (b.maps = {}),
-//     r = new Set(),
-//     e = new URLSearchParams(),
-//     u = () =>
-//       h ||
-//       (h = new Promise(async (f, n) => {
-//         await (a = m.createElement("script"));
-//         e.set("libraries", [...r] + "");
-//         for (k in g)
-//           e.set(
-//             k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
-//             g[k]
-//           );
-//         e.set("callback", c + ".maps." + q);
-//         a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-//         d[q] = f;
-//         a.onerror = () => (h = n(Error(p + " could not load.")));
-//         a.nonce = m.querySelector("script[nonce]")?.nonce || "";
-//         m.head.append(a);
-//       }));
-//   d[l]
-//     ? console.warn(p + " only loads once. Ignoring:", g)
-//     : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-// })({ key: "API KEY HIDDEN", v: "weekly" });
-
-// fetch("http://localhost:3000/fetchGoogleAPI", { mode: "cors" })
-//   .then(function (response) {
-//     console.log(response);
-//     eval(response);
-//   })
-//   .catch(function (err) {
-//     // Error :(
-//   });
-
-// Initialize and add the map
+let map;
+let infoWindow;
 
 async function initMap() {
   // The location of Uluru
@@ -57,18 +12,40 @@ async function initMap() {
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
   // The map, centered at Uluru
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 16,
+  map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 20,
     center: position,
-    mapId: "DEMO_MAP_ID",
+    mapId: "c31d8b610a6f7ab2",
   });
 
-  // The marker, positioned at Uluru
-  const marker = new AdvancedMarkerElement({
-    map: map,
-    position: position,
-    title: "Uluru",
+  //set polygons on the farm
+  const crop1 = new google.maps.Polygon({
+    paths: crop1Cords,
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 3,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35,
   });
+
+  crop1.setMap(map);
+
+  crop1.addListener("click", showCropsInfo);
+  infoWindow = new google.maps.InfoWindow();
 }
+
+function showCropsInfo(event) {
+  contentString = "put info about crops in here";
+  infoWindow.setContent(contentString);
+  infoWindow.setPosition(event.latLng);
+  infoWindow.open(map);
+}
+
+const crop1Cords = [
+  { lat: 34.05483036641861, lng: -117.76191973068477 }, // Top-left corner
+  { lat: 34.05483036641861, lng: -117.76091973068477 }, // Top-right corner
+  { lat: 34.05492036641861, lng: -117.76091973068477 }, // Bottom-right corner
+  { lat: 34.05492036641861, lng: -117.76191973068477 }, // Bottom-left corner
+];
 
 initMap();
