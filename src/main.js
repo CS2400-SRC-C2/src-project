@@ -1,17 +1,19 @@
 let map;
 let infoWindow;
 
+initMap();
+
 async function initMap() {
-  // The location of Uluru
+  // The location of the farm
   const position = {
     lat: 34.05483036641861,
     lng: -117.76191973068477,
   };
-  // Request needed libraries.
-  //@ts-ignore
+
+  //marker
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-  // The map, centered at Uluru
+  // The map, centered at farm
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 20,
     center: position,
@@ -32,6 +34,9 @@ async function initMap() {
 
   crop1.addListener("click", showCropsInfo);
   infoWindow = new google.maps.InfoWindow();
+
+  const myLocation = await getCurrentLocation();
+  addMarker(myLocation);
 }
 
 function showCropsInfo(event) {
@@ -48,4 +53,31 @@ const crop1Cords = [
   { lat: 34.05492036641861, lng: -117.76191973068477 }, // Bottom-left corner
 ];
 
-initMap();
+//Need implementation do I track by time or by location change? I'm not sure, to be implemeneted later!
+function trackLocation() {}
+
+//Function for getting user current location.
+function getCurrentLocation() {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+        resolve(pos);
+      },
+      (error) => {
+        reject(error);
+      }
+    );
+  });
+}
+
+// Function for adding a marker to the page.
+function addMarker(location) {
+  marker = new google.maps.Marker({
+    position: location,
+    map: map,
+  });
+}
