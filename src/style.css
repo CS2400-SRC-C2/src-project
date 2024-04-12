@@ -1,4 +1,19 @@
 #map {
-  height: 1000px;
+  height: 100vh;
   width: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#loadingState {
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  width: 100vw;
+  height: 100vh;
 }

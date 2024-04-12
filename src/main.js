@@ -1,13 +1,18 @@
+// import {cropLocations} from "./cropsInfo.js"; not working
+
 let map;
 let infoWindow;
 
 initMap();
 
 async function initMap() {
+  const loadingState = document.getElementById("loadingState");
+  loadingState.remove();
+
   // The location of the farm
   const position = {
-    lat: 34.05483036641861,
-    lng: -117.76191973068477,
+    lat: 34.053583437323056,
+    lng: -117.76200572967707,
   };
 
   //marker
@@ -15,19 +20,19 @@ async function initMap() {
 
   // The map, centered at farm
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 20,
+    zoom: 19,
     center: position,
     mapId: "c31d8b610a6f7ab2",
   });
 
   //set polygons on the farm
   const crop1 = new google.maps.Polygon({
-    paths: crop1Cords,
+    paths: cropLocations[0],
     strokeColor: "#FF0000",
     strokeOpacity: 0.8,
     strokeWeight: 3,
     fillColor: "#FF0000",
-    fillOpacity: 0.35,
+    fillOpacity: 0.9,
   });
 
   crop1.setMap(map);
@@ -45,13 +50,6 @@ function showCropsInfo(event) {
   infoWindow.setPosition(event.latLng);
   infoWindow.open(map);
 }
-
-const crop1Cords = [
-  { lat: 34.05483036641861, lng: -117.76191973068477 }, // Top-left corner
-  { lat: 34.05483036641861, lng: -117.76091973068477 }, // Top-right corner
-  { lat: 34.05492036641861, lng: -117.76091973068477 }, // Bottom-right corner
-  { lat: 34.05492036641861, lng: -117.76191973068477 }, // Bottom-left corner
-];
 
 //Need implementation do I track by time or by location change? I'm not sure, to be implemeneted later!
 function trackLocation() {}
@@ -81,3 +79,12 @@ function addMarker(location) {
     map: map,
   });
 }
+
+const cropLocations = [
+  [
+    { lat: 34.05483036641861, lng: -117.76191973068477 }, // Top-left corner
+    { lat: 34.05483036641861, lng: -117.76091973068477 }, // Top-right corner
+    { lat: 34.05492036641861, lng: -117.76091973068477 }, // Bottom-right corner
+    { lat: 34.05492036641861, lng: -117.76191973068477 }, // Bottom-left corner
+  ],
+];
