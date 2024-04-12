@@ -3,6 +3,13 @@
 let map;
 let infoWindow;
 
+const crop1Cords = [
+  { lat: 34.05483036641861, lng: -117.76191973068477 }, // Top-left corner
+  { lat: 34.05483036641861, lng: -117.76091973068477 }, // Top-right corner
+  { lat: 34.05492036641861, lng: -117.76091973068477 }, // Bottom-right corner
+  { lat: 34.05492036641861, lng: -117.76191973068477 }, // Bottom-left corner
+];
+
 initMap();
 
 async function initMap() {
@@ -14,9 +21,6 @@ async function initMap() {
     lat: 34.053583437323056,
     lng: -117.76200572967707,
   };
-
-  //marker
-  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
   // The map, centered at farm
   map = new google.maps.Map(document.getElementById("map"), {
@@ -40,8 +44,7 @@ async function initMap() {
   crop1.addListener("click", showCropsInfo);
   infoWindow = new google.maps.InfoWindow();
 
-  const myLocation = await getCurrentLocation();
-  addMarker(myLocation);
+  trackLocation();
 }
 
 function showCropsInfo(event) {
@@ -51,13 +54,26 @@ function showCropsInfo(event) {
   infoWindow.open(map);
 }
 
-//Need implementation do I track by time or by location change? I'm not sure, to be implemeneted later!
-function trackLocation() {}
+function trackLocation() {
+  setInterval(addCurrentLocationToMap, 5000);
+}
+
+let previousLocation = null;
+
+async function addCurrentLocationToMap() {
+  const myLocation = await getCurrentLocation();
+  if (previousLocation !== null) {
+    previousLocation.setMap(null);
+  }
+  previousLocation = addMarker(myLocation);
+  console.log(previousLocation);
+}
 
 //Function for getting user current location.
 function getCurrentLocation() {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
+      //getLocation
       (position) => {
         const pos = {
           lat: position.coords.latitude,
@@ -78,13 +94,5 @@ function addMarker(location) {
     position: location,
     map: map,
   });
+  return marker;
 }
-
-const cropLocations = [
-  [
-    { lat: 34.05483036641861, lng: -117.76191973068477 }, // Top-left corner
-    { lat: 34.05483036641861, lng: -117.76091973068477 }, // Top-right corner
-    { lat: 34.05492036641861, lng: -117.76091973068477 }, // Bottom-right corner
-    { lat: 34.05492036641861, lng: -117.76191973068477 }, // Bottom-left corner
-  ],
-];
