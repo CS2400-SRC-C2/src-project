@@ -1,16 +1,7 @@
-// import {cropLocations} from "./cropsInfo.js"; not working
+import {cropLocations} from "./cropsInfo.js"; 
 
 let map;
 let infoWindow;
-
-const cropLocations = [
-  [
-    { lat: 34.05483036641861, lng: -117.76191973068477 }, // Top-left corner
-    { lat: 34.05483036641861, lng: -117.76091973068477 }, // Top-right corner
-    { lat: 34.05492036641861, lng: -117.76091973068477 }, // Bottom-right corner
-    { lat: 34.05492036641861, lng: -117.76191973068477 }, // Bottom-left corner
-  ],
-];
 
 initMap();
 
@@ -68,7 +59,6 @@ async function addCurrentLocationToMap() {
     previousLocation.setMap(null);
   }
   previousLocation = addMarker(myLocation);
-  console.log(previousLocation);
 }
 
 //Function for getting user current location.
@@ -92,7 +82,7 @@ function getCurrentLocation() {
 
 // Function for adding a marker to the page.
 function addMarker(location) {
-  marker = new google.maps.Marker({
+  const marker = new google.maps.Marker({
     position: location,
     map: map,
   });
