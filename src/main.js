@@ -1,52 +1,83 @@
-import {cropLocations} from "./cropsInfo.js"; 
+import {
+  polygonLandmarks,
+  polygonLandmarksInfo,
+  singleLandMarks,
+  singleLandMarksInfo,
+} from "./FarmInfo.js";
 
 let map;
-let infoWindow;
+let infoWindow = new google.maps.InfoWindow();
+const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
 initMap();
 
+//Initialize Map and draws the map
 async function initMap() {
   const loadingState = document.getElementById("loadingState");
   loadingState.remove();
 
   // The location of the farm
   const position = {
-    lat: 34.053583437323056,
+    lat: 34.054083437323056,
     lng: -117.76200572967707,
   };
 
   // The map, centered at farm
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 19,
+    zoom: 20,
     center: position,
     mapId: "c31d8b610a6f7ab2",
+    maxZoom: 21,
+    minZoom: 15
   });
 
-  //set polygons on the farm
-  const crop1 = new google.maps.Polygon({
-    paths: cropLocations[0],
-    strokeColor: "#FF0000",
-    strokeOpacity: 0.8,
-    strokeWeight: 3,
-    fillColor: "#FF0000",
-    fillOpacity: 0.9,
-  });
+  const position2 = {
+    lat: 34.05448,
+    lng: -117.76169,
+  };
 
-  crop1.setMap(map);
-
-  crop1.addListener("click", showCropsInfo);
-  infoWindow = new google.maps.InfoWindow();
-
+  addLandMarks();
+  addPolygonLandMarks();
   trackLocation();
 }
 
-function showCropsInfo(event) {
-  contentString = "put info about crops in here";
-  infoWindow.setContent(contentString);
-  infoWindow.setPosition(event.latLng);
-  infoWindow.open(map);
+//Adding Special Landmarks on the map
+function addLandMarks() {
+  for (let i = 0; i < singleLandMarks.length; i++) {
+    const icon = document.createElement("img");
+    icon.src = singleLandMarksInfo[i].icon;
+    const marker = addMarker(singleLandMarks[i], icon)
+    marker.addListener("click", (event) => {
+      infoWindow.setContent(singleLandMarksInfo[i].description);
+      infoWindow.setPosition(event.latLng);
+      infoWindow.open(map);
+    });
+  }
 }
 
+//Adding crops layout on the farm
+function addPolygonLandMarks() {
+  for (let i = 0; i < polygonLandmarks.length; i++) {
+    const polygon = new google.maps.Polygon({
+      paths: polygonLandmarks[i],
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.8,
+      strokeWeight: 3,
+      fillColor: "#FF0000",
+      fillOpacity: 0.9,
+    });
+
+    polygon.setMap(map);
+
+    polygon.addListener("click", (event) => {
+      infoWindow.setContent(polygonLandmarksInfo[i].description);
+      infoWindow.setPosition(event.latLng);
+      infoWindow.open(map);
+    });
+  }
+}
+
+//Tracks User Location
 function trackLocation() {
   setInterval(addCurrentLocationToMap, 5000);
 }
@@ -81,10 +112,20 @@ function getCurrentLocation() {
 }
 
 // Function for adding a marker to the page.
-function addMarker(location) {
-  const marker = new google.maps.Marker({
+// function addMarker(location, icon) {
+//   const marker = new google.maps.Marker({
+//     position: location,
+//     map: map,
+//     content: icon,
+//   });
+//   return marker;
+// }
+
+function addMarker(location, icon) {
+  const marker = new AdvancedMarkerElement({
     position: location,
     map: map,
+    content: icon,
   });
   return marker;
 }
