@@ -36,17 +36,17 @@ export const polygonLandmarks = [
   ],
   //Side Garden
   [
-    { lat: 34.05411, lng: -117.762 },
-    { lat: 34.05411, lng: -117.76192 },
-    { lat: 34.05429, lng: -117.76192 },
-    { lat: 34.05429, lng: -117.762 },
+    { lat: 34.05421, lng: -117.762 },
+    { lat: 34.05421, lng: -117.76192 },
+    { lat: 34.0544, lng: -117.76192 },
+    { lat: 34.0544, lng: -117.762 },
   ],
   //Native Garden
   [
-    { lat: 34.05452, lng: -117.67111 },
+    { lat: 34.05425, lng: -117.76111 },
     { lat: 34.05425, lng: -117.76102 },
     { lat: 34.05389, lng: -117.76102 },
-    { lat: 34.05425, lng: -117.76111 },
+    { lat: 34.05389, lng: -117.76111 },
   ],
   //African Garden
   [
@@ -63,7 +63,10 @@ export const polygonLandmarksInfo = [
   { description: "Crop 3", color: "#ec882b" },
   { description: "Crop 4", color: "#ec882b" },
   { description: "Crop 5", color: "#ec882b" },
-  { description: "Side Garden", color: "#ecff03" },
+  {
+    description: "Side Garden",
+    color: "#ecff03",
+  },
   { description: "Native Garden", color: "#ecff03" },
   { description: "African Garden", color: "#ecff03" },
 ];
@@ -94,11 +97,11 @@ export const singleLandMarksInfo = [
   { description: "Outdoor kitchen", icon: path + "outdoor-kitchen.png" },
   { description: "Barn", icon: path + "barn.png" },
   { description: "Monkey puzzle tree", icon: path + "puzzle.png" },
-  { description: "Shop?", icon: path + "shop.png" },
-  { description: "Another area", icon: "" },
+  { description: "Shop", icon: path + "shop.png" },
+  { description: "Seating Area", icon: path + "seating-area.png" },
   {
     description: "trees/ maybe fruit trees and stuff",
     icon: path + "tree.png",
   },
-  { description: "Amphitheater", icon: "" },
+  { description: "Amphitheater", icon: path + "amphitheater.png" },
 ];
