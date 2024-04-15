@@ -1,0 +1,29 @@
+#map {
+  height: 100vh;
+  width: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#loadingState {
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  width: 100vw;
+  height: 100vh;
+}
+
+#key {
+  position: absolute;
+  top: 110px;
+  right: 10px;
+  padding: 20px;
+  border: 20px;
+  background-color: #c5ece2;
+  font-size: 1rem;
+}
