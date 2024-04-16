@@ -58,17 +58,14 @@ export const polygonLandmarks = [
 ];
 
 export const polygonLandmarksInfo = [
-  { description: "Crop 1", color: "#ec882b" },
-  { description: "Crop 2", color: "#ec882b" },
-  { description: "Crop 3", color: "#ec882b" },
-  { description: "Crop 4", color: "#ec882b" },
-  { description: "Crop 5", color: "#ec882b" },
-  {
-    description: "Side Garden",
-    color: "#ecff03",
-  },
-  { description: "Native Garden", color: "#ecff03" },
-  { description: "African Garden", color: "#ecff03" },
+  { description: "Crop 1", color: "#3c566c" },
+  { description: "Crop 2", color: "#3c566c" },
+  { description: "Crop 3", color: "#3c566c" },
+  { description: "Crop 4", color: "#3c566c" },
+  { description: "Crop 5", color: "#3c566c" },
+  { description: "Side Garden", color: "#84aea4",},
+  { description: "Native Garden", color: "#84aea4" },
+  { description: "African Garden", color: "#84aea4" },
 ];
 
 export const singleLandMarks = [

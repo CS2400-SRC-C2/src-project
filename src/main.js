@@ -18,15 +18,15 @@ async function initMap() {
 
   // The location of the farm
   const position = {
-    lat: 34.054083437323056,
-    lng: -117.76200572967707,
+    lat: 34.0542833,
+    lng: -117.7615739,
   };
 
   // The map, centered at farm
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 20,
     center: position,
-    mapId: "c31d8b610a6f7ab2",
+    mapId: "dc2e9f6e433cf3d0",
     maxZoom: 21,
     minZoom: 15,
   });
