@@ -18,12 +18,23 @@ body {
   height: 100vh;
 }
 
+#farm-name {
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 2.3rem;
+  margin: 0;
+  background-color: #17152e;
+}
+
 #key {
+  color: white;
   position: absolute;
-  top: 110px;
-  right: 10px;
+  bottom: 35px;
+  left: 35px;
   padding: 20px;
-  border: 20px;
-  background-color: #c5ece2;
-  font-size: 1rem;
+  background-color: #e43254;
+  font-size: 1.7rem;
+  border-radius: 20px;
 }
