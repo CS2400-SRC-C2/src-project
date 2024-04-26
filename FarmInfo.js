@@ -63,7 +63,7 @@ export const polygonLandmarksInfo = [
   { description: "Crop 3", color: "#3c566c" },
   { description: "Crop 4", color: "#3c566c" },
   { description: "Crop 5", color: "#3c566c" },
-  { description: "Side Garden", color: "#84aea4",},
+  { description: "Side Garden", color: "#84aea4" },
   { description: "Native Garden", color: "#84aea4" },
   { description: "African Garden", color: "#84aea4" },
 ];
@@ -94,7 +94,7 @@ export const singleLandMarksInfo = [
   { description: "Outdoor kitchen", icon: path + "outdoor-kitchen.png" },
   { description: "Barn", icon: path + "barn.png" },
   { description: "Monkey puzzle tree", icon: path + "puzzle.png" },
-  { description: "Shop", icon: path + "shop.png" },
+  { description: "Food Pantry", icon: path + "shop.png" },
   { description: "Seating Area", icon: path + "seating-area.png" },
   {
     description: "trees/ maybe fruit trees and stuff",

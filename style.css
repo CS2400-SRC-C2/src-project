@@ -38,3 +38,8 @@ body {
   font-size: 1.7rem;
   border-radius: 20px;
 }
+
+#contentTitle {
+  font-size: 5vw;
+  color: green;
+}

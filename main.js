@@ -42,7 +42,7 @@ function addLandMarks() {
     icon.src = singleLandMarksInfo[i].icon;
     const marker = addMarker(singleLandMarks[i], icon);
     marker.addListener("click", (event) => {
-      infoWindow.setContent(singleLandMarksInfo[i].description);
+      infoWindow.setContent("<div id=\"contentTitle\">" + singleLandMarksInfo[i].description + "<\div");
       infoWindow.setPosition(event.latLng);
       infoWindow.open(map);
     });
