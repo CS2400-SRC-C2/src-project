@@ -41,5 +41,12 @@ body {
 
 #contentTitle {
   font-size: 5vw;
-  color: green;
+  font-family: Arial, sans-serif; 
+  font-weight: bold; 
+  text-decoration: underline;
+}
+
+#contentBody {
+  font-size: 3vw;
+  font-family: 'Times New Roman', serif; 
 }

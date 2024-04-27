@@ -58,14 +58,14 @@ export const polygonLandmarks = [
 ];
 
 export const polygonLandmarksInfo = [
-  { description: "Crop 1", color: "#3c566c" },
-  { description: "Crop 2", color: "#3c566c" },
-  { description: "Crop 3", color: "#3c566c" },
-  { description: "Crop 4", color: "#3c566c" },
-  { description: "Crop 5", color: "#3c566c" },
-  { description: "Side Garden", color: "#84aea4" },
-  { description: "Native Garden", color: "#84aea4" },
-  { description: "African Garden", color: "#84aea4" },
+  { title: 'Crop 1', color: '#3c566c' },
+  { title: 'Crop 2', color: '#3c566c' },
+  { title: 'Crop 3', color: '#3c566c' },
+  { title: 'Crop 4', color: '#3c566c' },
+  { title: 'Crop 5', color: '#3c566c' },
+  { title: 'Side Garden', color: '#84aea4' },
+  { title: 'Native Garden', color: '#84aea4' },
+  { title: 'African Garden', color: '#84aea4' },
 ];
 
 export const singleLandMarks = [
@@ -83,22 +83,56 @@ export const singleLandMarks = [
   { lat: 34.05435, lng: -117.76163 },
 ];
 
-const path = "./img/";
+const path = './img/';
 
 export const singleLandMarksInfo = [
-  { description: "Butterfly sanctuary", icon: path + "butterfly.png" },
-  { description: "Rabbits", icon: path + "rabbit.png" },
-  { description: "Goats", icon: path + "goat.png" },
-  { description: "Chickens", icon: path + "chicken.png" },
-  { description: "Family area", icon: path + "family.png" },
-  { description: "Outdoor kitchen", icon: path + "outdoor-kitchen.png" },
-  { description: "Barn", icon: path + "barn.png" },
-  { description: "Monkey puzzle tree", icon: path + "puzzle.png" },
-  { description: "Food Pantry", icon: path + "shop.png" },
-  { description: "Seating Area", icon: path + "seating-area.png" },
+  { title: 'Butterfly sanctuary', icon: path + 'butterfly.png' },
   {
-    description: "trees/ maybe fruit trees and stuff",
-    icon: path + "tree.png",
+    title: 'Bunnies',
+    description:
+      'Say hi to Marshmallow, Sprinkles, and Bubblegum. These adorable animals were named by our Junior Farmers and are “hop-py” to see you.',
+    icon: path + 'rabbit.png',
   },
-  { description: "Amphitheater", icon: path + "amphitheater.png" },
+  {
+    title: 'Goats',
+    description: 'come meet our friendly and fun loving Pygmy goats ',
+    icon: path + 'goat.png',
+  },
+  {
+    title: 'Chickens',
+    description:
+      'our chicken farm offers fresh eggs on a first come/pay what you can basis. If you are not here for eggs then say hello to our seven feathered friends.',
+    icon: path + 'chicken.png',
+  },
+  { title: 'Family area', icon: path + 'family.png' },
+  { title: 'Outdoor kitchen', icon: path + 'outdoor-kitchen.png' },
+  { title: 'Barn', icon: path + 'barn.png' },
+  {
+    title: 'Monkey Puzzle Tree',
+    description:
+      'although native to central and southern Chile and western Argentina, this tree, named Araucaria araucana, is right here in pomona. This endangered species can grow up to 160 feet tall and 8 feet wide. Some can even live for more than 700 years. This tree got its nickname from its rigid pointy leaves and a comment about how difficult it must be for monkeys to climb it',
+    icon: path + 'puzzle.png',
+  },
+  {
+    title: 'Evergreen',
+    description:
+      'this equal access market provides an abundance of nutritious food options, including fruits and vegetables grown right here.',
+    icon: path + 'shop.png',
+  },
+  {
+    title: 'Bodega',
+    description:
+      'visit our bodega and get yourself; fresh produce, pantry items, hygiene kits, school supplies, books, clothing, preserved foods, and a seed exchange',
+    icon: path + 'seating-area.png',
+  },
+  {
+    title: 'trees/ maybe fruit trees and stuff',
+    icon: path + 'tree.png',
+  },
+  {
+    title: 'Amphitheater',
+    description:
+      'Come visit during one of our events and you may see live music, dancing, or performances here.',
+    icon: path + 'amphitheater.png',
+  },
 ];

@@ -3,17 +3,17 @@ import {
   polygonLandmarksInfo,
   singleLandMarks,
   singleLandMarksInfo,
-} from "./FarmInfo.js";
+} from './FarmInfo.js';
 
 let map;
 let infoWindow = new google.maps.InfoWindow();
-const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
 
 initMap();
 
 //Initialize Map and draws the map
 async function initMap() {
-  const loadingState = document.getElementById("loadingState");
+  const loadingState = document.getElementById('loadingState');
   loadingState.remove();
 
   // The location of the farm
@@ -23,10 +23,10 @@ async function initMap() {
   };
 
   // The map, centered at farm
-  map = new google.maps.Map(document.getElementById("map"), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 20,
     center: position,
-    mapId: "dc2e9f6e433cf3d0",
+    mapId: 'dc2e9f6e433cf3d0',
     maxZoom: 21,
     minZoom: 15,
   });
@@ -38,11 +38,18 @@ async function initMap() {
 //Adding Special Landmarks on the map
 function addLandMarks() {
   for (let i = 0; i < singleLandMarks.length; i++) {
-    const icon = document.createElement("img");
+    const icon = document.createElement('img');
     icon.src = singleLandMarksInfo[i].icon;
     const marker = addMarker(singleLandMarks[i], icon);
-    marker.addListener("click", (event) => {
-      infoWindow.setContent("<div id=\"contentTitle\">" + singleLandMarksInfo[i].description + "<\div");
+    marker.addListener('click', (event) => {
+      infoWindow.setContent(
+        '<div id="contentTitle">' +
+          singleLandMarksInfo[i].title +
+          '</div>' +
+          '<div id="contentBody">' +
+          singleLandMarksInfo[i].description +
+          '</div>'
+      );
       infoWindow.setPosition(event.latLng);
       infoWindow.open(map);
     });
@@ -62,8 +69,15 @@ function addPolygonLandMarks() {
 
     polygon.setMap(map);
 
-    polygon.addListener("click", (event) => {
-      infoWindow.setContent(polygonLandmarksInfo[i].description);
+    polygon.addListener('click', (event) => {
+      infoWindow.setContent(
+        '<div id="contentTitle">' +
+          polygonLandmarksInfo[i].title +
+          '</div>' +
+          '<div id="contentBody">' +
+          polygonLandmarksInfo[i].description +
+          '</div>'
+      );
       infoWindow.setPosition(event.latLng);
       infoWindow.open(map);
     });
