@@ -58,14 +58,24 @@ export const polygonLandmarks = [
 ];
 
 export const polygonLandmarksInfo = [
-  { title: 'Crop 1', color: '#3c566c' },
-  { title: 'Crop 2', color: '#3c566c' },
-  { title: 'Crop 3', color: '#3c566c' },
-  { title: 'Crop 4', color: '#3c566c' },
-  { title: 'Crop 5', color: '#3c566c' },
-  { title: 'Side Garden', color: '#84aea4' },
-  { title: 'Native Garden', color: '#84aea4' },
-  { title: 'African Garden', color: '#84aea4' },
+  { title: 'Crop 1', description: '', color: '#3c566c' },
+  { title: 'Crop 2', description: '', color: '#3c566c' },
+  { title: 'Crop 3', description: '', color: '#3c566c' },
+  { title: 'Crop 4', description: '', color: '#3c566c' },
+  { title: 'Crop 5', description: '', color: '#3c566c' },
+  { title: 'Side Garden', description: '', color: '#84aea4' },
+  {
+    title: 'N8TV Garden',
+    description:
+      'the preservation of our California native flora and fauna is very important not only to us but especially to different groups of indigenous community members as many of them are unable to explore these plants in person. The purpose of this farm is to bring these culturally important crops and seeds closer to them and continue to foster and grow them. ',
+    color: '#84aea4',
+  },
+  {
+    title: 'African Garden',
+    description:
+      'You can access African diasporic foods grown by dedicated people in our community who want to represent their culture here in our farm. Fruits and vegetables from all over Africa are grown right here.',
+    color: '#84aea4',
+  },
 ];
 
 export const singleLandMarks = [
@@ -86,7 +96,11 @@ export const singleLandMarks = [
 const path = './img/';
 
 export const singleLandMarksInfo = [
-  { title: 'Butterfly sanctuary', icon: path + 'butterfly.png' },
+  {
+    title: 'Butterfly sanctuary',
+    description: '',
+    icon: path + 'butterfly.png',
+  },
   {
     title: 'Bunnies',
     description:
@@ -104,9 +118,13 @@ export const singleLandMarksInfo = [
       'our chicken farm offers fresh eggs on a first come/pay what you can basis. If you are not here for eggs then say hello to our seven feathered friends.',
     icon: path + 'chicken.png',
   },
-  { title: 'Family area', icon: path + 'family.png' },
-  { title: 'Outdoor kitchen', icon: path + 'outdoor-kitchen.png' },
-  { title: 'Barn', icon: path + 'barn.png' },
+  { title: 'Family area', description: '', icon: path + 'family.png' },
+  {
+    title: 'Outdoor kitchen',
+    description: '',
+    icon: path + 'outdoor-kitchen.png',
+  },
+  { title: 'Barn', description: '', icon: path + 'barn.png' },
   {
     title: 'Monkey Puzzle Tree',
     description:
@@ -126,7 +144,8 @@ export const singleLandMarksInfo = [
     icon: path + 'seating-area.png',
   },
   {
-    title: 'trees/ maybe fruit trees and stuff',
+    title: 'trees',
+    description: '',
     icon: path + 'tree.png',
   },
   {
