@@ -67,13 +67,13 @@ export const polygonLandmarksInfo = [
   {
     title: 'N8TV Garden',
     description:
-      'the preservation of our California native flora and fauna is very important not only to us but especially to different groups of indigenous community members as many of them are unable to explore these plants in person. The purpose of this farm is to bring these culturally important crops and seeds closer to them and continue to foster and grow them. ',
+      'Preservation of our California native flora and fauna is very important, especially to indigenous community members who are unable to explore these plants in the wild. The purpose of this farm is to bring these culturally important crops and seeds closer to them and continue to foster and grow them.',
     color: '#84aea4',
   },
   {
     title: 'African Garden',
     description:
-      'You can access African diasporic foods grown by dedicated people in our community who want to represent their culture here in our farm. Fruits and vegetables from all over Africa are grown right here.',
+      'Here you can access African diasporic foods, grown by dedicated members of our community who want to represent their culture. Fruits and vegetables from all over Africa are grown right here.',
     color: '#84aea4',
   },
 ];
@@ -97,25 +97,25 @@ const path = './img/';
 
 export const singleLandMarksInfo = [
   {
-    title: 'Butterfly sanctuary',
+    title: 'Butterfly Sanctuary',
     description: '',
     icon: path + 'butterfly.png',
   },
   {
     title: 'Bunnies',
     description:
-      'Say hi to Marshmallow, Sprinkles, and Bubblegum. These adorable animals were named by our Junior Farmers and are “hop-py” to see you.',
+      'Say hi to Marshmallow, Sprinkles, and Bubblegum! These adorable animals were named by our Junior Farmers and are “hop-py” to see you!',
     icon: path + 'rabbit.png',
   },
   {
     title: 'Goats',
-    description: 'come meet our friendly and fun loving Pygmy goats ',
+    description: 'Come meet our friendly and fun loving Pygmy goats!',
     icon: path + 'goat.png',
   },
   {
     title: 'Chickens',
     description:
-      'our chicken farm offers fresh eggs on a first come/pay what you can basis. If you are not here for eggs then say hello to our seven feathered friends.',
+      "Our chicken farm offers fresh eggs on a first come/pay what you can basis. If you're not here for eggs, then say hello to our seven feathered friends.",
     icon: path + 'chicken.png',
   },
   { title: 'Family area', description: '', icon: path + 'family.png' },
@@ -128,23 +128,23 @@ export const singleLandMarksInfo = [
   {
     title: 'Monkey Puzzle Tree',
     description:
-      'although native to central and southern Chile and western Argentina, this tree, named Araucaria araucana, is right here in pomona. This endangered species can grow up to 160 feet tall and 8 feet wide. Some can even live for more than 700 years. This tree got its nickname from its rigid pointy leaves and a comment about how difficult it must be for monkeys to climb it',
+      'Although native to central and southern Chile and western Argentina, this tree, named Araucaria araucana, is right here in Pomona. This endangered species can grow up to 160 feet tall and 8 feet wide. Some can even live for more than 700 years! This tree got its nickname from its rigid pointy leaves and a comment about how difficult it must be for monkeys to climb it',
     icon: path + 'puzzle.png',
   },
   {
     title: 'Evergreen',
     description:
-      'this equal access market provides an abundance of nutritious food options, including fruits and vegetables grown right here.',
+      'This equal access market provides an abundance of nutritious food options, including fruits and vegetables grown right here!',
     icon: path + 'shop.png',
   },
   {
     title: 'Bodega',
     description:
-      'visit our bodega and get yourself; fresh produce, pantry items, hygiene kits, school supplies, books, clothing, preserved foods, and a seed exchange',
+      'Visit our bodega and get yourself; fresh produce, pantry items, hygiene kits, school supplies, books, clothing, preserved foods, and a seed exchange',
     icon: path + 'seating-area.png',
   },
   {
-    title: 'trees',
+    title: 'Trees',
     description: '',
     icon: path + 'tree.png',
   },
