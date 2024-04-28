@@ -3,6 +3,7 @@ import {
   polygonLandmarksInfo,
   singleLandMarks,
   singleLandMarksInfo,
+  borderCoords,
 } from './FarmInfo.js';
 
 let map;
@@ -82,6 +83,13 @@ function addPolygonLandMarks() {
       infoWindow.open(map);
     });
   }
+  const border = new google.maps.Polygon({
+    paths: borderCoords,
+    strokeOpacity: .3,
+    strokeWeight: 4,
+    fillOpacity: 0.01,
+  });
+  border.setMap(map);
 }
 
 //Tracks User Location

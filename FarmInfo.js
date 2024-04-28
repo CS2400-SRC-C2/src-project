@@ -78,6 +78,17 @@ export const polygonLandmarksInfo = [
   },
 ];
 
+export const borderCoords = [
+  { lat: 34.054721, lng: -117.762064 }, //tl
+  { lat: 34.053954, lng: -117.762064 },
+  { lat: 34.053954, lng: -117.761546 },
+  { lat: 34.053531, lng: -117.761546 },
+  { lat: 34.053531, lng: -117.761053 },
+  { lat: 34.053816, lng: -117.761053},
+  { lat: 34.053816, lng: -117.760976 },
+  { lat: 34.054721, lng: -117.761000 },
+];
+
 export const singleLandMarks = [
   { lat: 34.05404, lng: -117.76191 },
   { lat: 34.05405, lng: -117.7617 },
