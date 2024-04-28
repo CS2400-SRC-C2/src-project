@@ -1,3 +1,8 @@
+/**
+ * Array of polygon landmarks representing different crops and gardens.
+ * Each element in the array represents a corner coordinate of a polygon for a specific crop or garden.
+ * @type {Array<Array<{lat: number, lng: number}>>}
+ */
 export const polygonLandmarks = [
   //crop 1
   [
@@ -57,6 +62,11 @@ export const polygonLandmarks = [
   ],
 ];
 
+/**
+ * Array of polygon landmarks information.
+ * Each element in the array contains the title, description, and map color of a specific crop or garden.
+ * @type {Array<{title: string, description: string, color: string}>}
+ */
 export const polygonLandmarksInfo = [
   { title: 'Crop 1', description: '', color: '#3c566c' },
   { title: 'Crop 2', description: '', color: '#3c566c' },
@@ -78,6 +88,10 @@ export const polygonLandmarksInfo = [
   },
 ];
 
+/**
+ * Array of border coordinates for the farm. Uses decimal degrees.
+ * @type {Array<{lat: number, lng: number}>}
+ */
 export const borderCoords = [
   { lat: 34.054721, lng: -117.762064 }, //tl
   { lat: 34.053954, lng: -117.762064 },
@@ -89,6 +103,10 @@ export const borderCoords = [
   { lat: 34.054721, lng: -117.761000 },
 ];
 
+/**
+ * Array of single land marks with latitude and longitude coordinates.
+ * @type {Array<{lat: number, lng: number}>}
+ */
 export const singleLandMarks = [
   { lat: 34.05404, lng: -117.76191 },
   { lat: 34.05405, lng: -117.7617 },
@@ -106,6 +124,11 @@ export const singleLandMarks = [
 
 const path = './img/';
 
+/**
+  * Array of single land marks information.
+  * Each element in the array contains the title, description, and icon of a specific landmark.
+  * @type {Array<{title: string, description: string, icon: string}>}
+  */
 export const singleLandMarksInfo = [
   {
     title: 'Butterfly Sanctuary',

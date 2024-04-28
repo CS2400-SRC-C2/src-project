@@ -12,7 +12,13 @@ const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
 
 initMap();
 
-//Initialize Map and draws the map
+/**
+ * Initializes the map with html loading message. Object made containing center of map.
+ * Google Maps map created with default zoom and position set to map center. Custom styled map id is used.
+ * Sets minimum and maximum zoom levels.
+ * Calls addLandMarks and addPolygonLandMarks to add landmarks to the map, and trackLocation to track user location.
+ * @returns {Promise<void>} A promise that resolves when the map is initialized.
+ */
 async function initMap() {
   const loadingState = document.getElementById('loadingState');
   loadingState.remove();
@@ -36,7 +42,12 @@ async function initMap() {
   trackLocation();
 }
 
-//Adding Special Landmarks on the map
+/**
+ * Adds the non-polygon landmarks to the map by looping through the arrays from FarmInfo.js containing
+ * the coordinates of each landmark, creating a marker for each and adding it to the map. 
+ * Adds an event listener to each marker so that when it is clicked, an info window will pop up with the title and
+ * description of the landmark.
+ */
 function addLandMarks() {
   for (let i = 0; i < singleLandMarks.length; i++) {
     const icon = document.createElement('img');
@@ -57,7 +68,13 @@ function addLandMarks() {
   }
 }
 
-//Adding crops layout on the farm
+/**
+ * Adds the polygon landmarks representing crops and gardens to the map. Loops through the arrays 
+ * from FarmInfo.js containing the coordinates of the corners of each crop to create each polygon and add it to the map. 
+ * Adds an event listener to each polygon so that when it is clicked, an info window will pop up with the title and
+ * description of the polygon landmark.
+ * Outside the loop, a border is created around the farm to show the boundaries.
+ */
 function addPolygonLandMarks() {
   for (let i = 0; i < polygonLandmarks.length; i++) {
     const polygon = new google.maps.Polygon({
@@ -92,13 +109,19 @@ function addPolygonLandMarks() {
   border.setMap(map);
 }
 
-//Tracks User Location
+/**
+  * Calls addCurrentLocationToMap every 5 seconds to update the user's location on the map
+ */
 function trackLocation() {
   setInterval(addCurrentLocationToMap, 5000);
 }
 
 let previousLocation = null;
 
+/**
+ * Adds the current location to the map as a marker. Removes the previous location marker if it exists.
+ * @returns {Promise<void>} A promise that resolves when the current location is added to the map.
+ */
 async function addCurrentLocationToMap() {
   const myLocation = await getCurrentLocation();
   if (previousLocation !== null) {
@@ -107,7 +130,11 @@ async function addCurrentLocationToMap() {
   previousLocation = addMarker(myLocation);
 }
 
-//Function for getting user current location.
+/**
+ * Retrieves the current location of the user using the browser's geolocation API.
+ * @returns {Promise<{ lat: number, lng: number }>} A promise that resolves to an object containing the latitude and longitude of the current location.
+ * @throws {Error} If there is an error retrieving the current location.
+ */
 function getCurrentLocation() {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
@@ -126,6 +153,12 @@ function getCurrentLocation() {
   });
 }
 
+/**
+ * Creates and returns a marker with the specified location and icon.
+ * @param {Object} location - The location of the marker, contains lat and long.
+ * @param {HTMLImageElement} icon - The marker image.
+ * @returns {AdvancedMarkerElement} The created marker.
+ */
 function addMarker(location, icon) {
   const marker = new AdvancedMarkerElement({
     position: location,
