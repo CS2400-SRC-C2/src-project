@@ -69,13 +69,19 @@ function addLandMarks() {
 }
 
 /**
+ * Border is created around the farm to show the boundaries.
  * Adds the polygon landmarks representing crops and gardens to the map. Loops through the arrays 
  * from FarmInfo.js containing the coordinates of the corners of each crop to create each polygon and add it to the map. 
  * Adds an event listener to each polygon so that when it is clicked, an info window will pop up with the title and
  * description of the polygon landmark.
- * Outside the loop, a border is created around the farm to show the boundaries.
  */
 function addPolygonLandMarks() {
+  const border = new google.maps.Polygon({
+    paths: borderCoords,
+    strokeOpacity: .3,
+    strokeWeight: 4,
+    fillOpacity: 0.01,
+  });
   for (let i = 0; i < polygonLandmarks.length; i++) {
     const polygon = new google.maps.Polygon({
       paths: polygonLandmarks[i],
@@ -100,12 +106,6 @@ function addPolygonLandMarks() {
       infoWindow.open(map);
     });
   }
-  const border = new google.maps.Polygon({
-    paths: borderCoords,
-    strokeOpacity: .3,
-    strokeWeight: 4,
-    fillOpacity: 0.01,
-  });
   border.setMap(map);
 }
 
