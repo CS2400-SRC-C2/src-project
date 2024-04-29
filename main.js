@@ -80,7 +80,7 @@ function addPolygonLandMarks() {
     paths: borderCoords,
     strokeOpacity: .3,
     strokeWeight: 4,
-    fillOpacity: 0.01,
+    fillOpacity: 0,
   });
   for (let i = 0; i < polygonLandmarks.length; i++) {
     const polygon = new google.maps.Polygon({
