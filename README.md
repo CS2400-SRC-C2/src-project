@@ -2,5 +2,7 @@
 
 **Group Name:** C2
 
+**Project** SRC Project - Lopez Urban Farm Interactive Map
+
 **Project Members:** Christian Orozco, Caleb Szeto, Thet Wai, Elijah Rosal, Cooper Nathan
 
